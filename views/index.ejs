@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Mateus</h1>
+        <a  class="btn-pergunta" href="/">Fazer pergunta</a>
+        <div class="perguntas">
+            <% perguntas.forEach(pergunta => { %>
+                <div class="pergunta">
+                    <p class="titulo"><%= pergunta.titulo %></p>
+                    <p class="descricao"><%= pergunta.descricao %></p>
+                    <a class="btn-detalhes" href="/pergunta/<%=pergunta.id%>">Detalhes</a>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>
