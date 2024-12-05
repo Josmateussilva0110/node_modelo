@@ -71,6 +71,22 @@ body {
     background-color: green;
 }
 
+.btn-deletar {
+    background-color: rgb(199, 13, 13);
+    padding: 12px;
+    border-radius: 15px;
+    width: 170px;
+    height: auto;
+    font-size: 15px;
+    border: none;
+    box-shadow: 7px 10px 60px rgba(24, 23, 23, 0.1);
+    margin-left: 8px;
+}
+
+.btn-deletar:hover {
+    background-color: rgb(122, 7, 7);
+}
+
 .btn-pergunta { 
     background-color: yellow;
     color: black;
@@ -152,7 +168,9 @@ hr {
     box-shadow: 7px 10px 60px rgba(24, 23, 23, 0.1);
     gap: 50px;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
+
 
 
 .bt-listar-perguntas:hover {

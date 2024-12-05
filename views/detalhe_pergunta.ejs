@@ -13,6 +13,10 @@
         <hr>
         <a class="bt-listar-perguntas" href="/editar_pergunta/<%= id%>">Editar</a>
         <a class="bt-listar-perguntas" href="/home">Lista de Perguntas</a>
+        <form action="/deletar/<%= pergunta.id %>" method="POST" onsubmit="return confirm('Deseja deletar esta pergunta?')">
+            <button type="submit" class="btn-deletar">Deletar</button>
+        </form>
+        
     </div>
 </body>
 </html>

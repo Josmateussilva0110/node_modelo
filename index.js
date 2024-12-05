@@ -86,6 +86,20 @@ app.post("/editar/:id", (request, response) => {
     })
 })
 
+app.post("/deletar/:id", (request, response) => {
+    const id = request.params.id
+
+    pergunta_model.destroy({
+        where: { id: id }
+    }).then(() => {
+        response.redirect("/home")
+    }).catch(err => {
+        console.error("Erro ao deletar a pergunta:", err)
+        response.redirect("/home");
+    })
+})
+
+
 
 app.listen(8080, () => {
     console.log("App rodando.")
