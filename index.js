@@ -47,13 +47,42 @@ app.post("/salvar_dados", (request, response) => {
 })
 
 
+app.get("/editar_pergunta/:id", (request, response) => {
+    var id = request.params.id 
+    pergunta_model.findOne({where: {id: id}}).then(pergunta => {
+        if(pergunta)
+            response.render("editar_pergunta", {pergunta: pergunta})
+        else
+            response.render("/home")
+    }).catch(err => {
+        console.error("erro ao buscar pergunta: ", err)
+        response.redirect("/home")
+    })
+})
+
+
 app.get("/pergunta/:id", (request, response) => {
     var id = request.params.id 
     pergunta_model.findOne({where: {id: id}}).then(pergunta => {
         if(pergunta != undefined)
-            response.render("detalhe_pergunta", {pergunta: pergunta})
+            response.render("detalhe_pergunta", {pergunta: pergunta, id: id})
         else
             response.redirect("/home")
+    })
+})
+
+app.post("/editar/:id", (request, response) => {
+    const id = request.params.id
+    const { titulo, descricao } = request.body
+
+    pergunta_model.update(
+        { titulo: titulo, descricao: descricao },
+        { where: { id: id } }
+    ).then(() => {
+        response.redirect("/home")
+    }).catch(err => {
+        console.error("Erro ao atualizar a pergunta:", err);
+        response.redirect("/editar/" + id)
     })
 })
 

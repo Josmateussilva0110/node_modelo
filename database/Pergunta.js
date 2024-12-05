@@ -11,9 +11,7 @@ const Pergunta = connection.define('pergunta', {
     }
 })
 
-Pergunta.sync({force: false}).then(() => {
-    console.log('tabela criada com sucesso.')
-}).catch((err) => {
+Pergunta.sync({force: false}).catch((err) => {
     console.log('erro ao criar a tabela ' + err)
 })
 

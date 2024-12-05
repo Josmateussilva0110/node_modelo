@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1><%=pergunta.titulo%></h1>
-    <p><%=pergunta.descricao%></p>
+    <div class="container">
+        <h1><%=pergunta.titulo%></h1>
+        <p><%=pergunta.descricao%></p>
+        <hr>
+        <a class="bt-listar-perguntas" href="/editar_pergunta/<%= id%>">Editar</a>
+        <a class="bt-listar-perguntas" href="/home">Lista de Perguntas</a>
+    </div>
 </body>
 </html>

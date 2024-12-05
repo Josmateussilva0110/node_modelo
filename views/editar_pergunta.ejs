@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pergunta</title>
+    <link rel="stylesheet" href="/css/style.css"
+</head>
+<body>
+    <div class="container">
+        <div class="formulario">
+            <h2>Editar</h2>
+            <div class="fundo-formulario">
+                <form action="/editar/<%= pergunta.id %>" method="POST">
+                    <label>Título</label>
+                    <input type="text" placeholder="digite o titulo de sua pergunta" name="titulo" value="<%= pergunta.titulo %>"  required> <br>
+                    <label>Descrição</label>
+                    <textarea id="descricao" name="descricao" required><%= pergunta.descricao %></textarea> <br>
+                    <button type="submit" class="btn-sucesso">Salvar</button>
+                    <a class="bt-listar-perguntas" href="/home">Lista de Perguntas</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
